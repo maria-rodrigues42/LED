@@ -1,306 +1,376 @@
+/* ==========================================================================
+   1. VARIÁVEIS & RESET (GLOBAL)
+   ========================================================================== */
+:root {
+    /* Cores Mondrian */
+    --c-cyan: #1CC2F3;
+    --c-yellow: #FBDF1A;
+    --c-red: #EE4640;
+    --c-black: #000000;
+    --c-white: #ffffff;
+    --c-gray: #f4f4f4;
 
-        /* --- DESIGN SYSTEM DARK BLOCK --- */
-        :root {
-            /* Cores da Logo */
-            --led-red: #EE4640;
-            --led-yellow: #FBDF1A;
-            --led-blue: #1CC2F3;
-            --led-gold: #FFD700; /* Para detalhes premium */
-            
-            /* Base Dark */
-            --bg-deep: #080808;
-            --bg-card: #141414;
-            --bg-card-hover: #1a1a1a;
-            --text-main: #ffffff;
-            --text-muted: #888888;
-            
-            /* O Segredo do "Squircle" */
-            --radius-squircle: 24px;
-            --radius-btn: 16px;
-            --shadow-elevation: 0 10px 30px rgba(0,0,0,0.5); /* Sombra profunda sem borda */
-        }
+    /* Configuração "Pontuda" e "Sombra Grossa" */
+    --border-thick: 3px solid var(--c-black);
+    --shadow-hard: 6px 6px 0px var(--c-black); /* Sombra um pouco menor no mobile */
+    --radius-sharp: 0px;
+    --radius-slight: 4px;
+}
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-            font-family: 'Manrope', sans-serif;
-            outline: none;
-        }
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Space Mono', monospace;
+    outline: none;
+}
 
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            overflow-x: hidden;
-            
-            /* Textura de Fundo (Matriz de LED sutil) */
-            background-image: radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
-            background-size: 30px 30px;
-        }
-
-        /* --- HEADER FLUTUANTE --- */
-        header {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1000px;
-            background: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(15px);
-            /* Squircle Style */
-            border-radius: var(--radius-btn);
-            box-shadow: var(--shadow-elevation);
-            
-            padding: 10px 25px;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 100;
-        }
-        header img { height: 40px; }
-        
-        .nav-cta {
-            background: var(--led-blue); color: black;
-            padding: 12px 25px; 
-            border-radius: var(--radius-btn);
-            font-weight: 800; text-decoration: none; font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(28, 194, 243, 0.3); /* Glow azul */
-            transition: 0.3s; border: none;
-        }
-        .nav-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(28, 194, 243, 0.5); color: white; }
-
-        /* --- HERO (GRID DA LOGO) --- */
-        .hero-container {
-            max-width: 1200px; margin: 140px auto 60px; padding: 0 20px;
-        }
-        
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 20px;
-        }
-
-        /* O ESTILO DOS CARDS (SQUIRCLE) */
-        .squircle-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-squircle);
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-            /* A mágica: Sombra em vez de borda */
-            box-shadow: var(--shadow-elevation);
-            transition: transform 0.3s ease, background 0.3s;
-        }
-        .squircle-card:hover { 
-            transform: translateY(-5px); 
-            background: var(--bg-card-hover);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-        }
-
-        /* Card Principal (Texto) */
-        .card-main {
-            grid-column: span 12;
-            display: flex; flex-direction: column; justify-content: center;
-            min-height: 450px;
-            background: radial-gradient(circle at top right, rgba(28, 194, 243, 0.1), var(--bg-card));
-        }
-        @media (min-width: 1024px) { .card-main { grid-column: span 8; } }
-
-        .card-main h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.1; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px;
-        }
-        .highlight { 
-            color: transparent;
-            background: linear-gradient(90deg, #fff, var(--led-blue));
-            -webkit-background-clip: text;
-        }
-
-        /* Botão Principal Estilo WhatsApp */
-        .btn-hero {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background: var(--led-red); color: white;
-            padding: 18px 40px;
-            font-size: 1.1rem; font-weight: 700; text-decoration: none;
-            border-radius: var(--radius-btn);
-            box-shadow: 0 10px 25px rgba(238, 70, 64, 0.4); /* Sombra colorida */
-            transition: 0.3s; margin-top: 20px; width: fit-content;
-        }
-        .btn-hero:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(238, 70, 64, 0.6); }
-
-        /* Card Visual (Imagem) */
-        .card-visual {
-            grid-column: span 12; height: 350px;
-            padding: 0; /* Imagem full */
-        }
-        @media (min-width: 1024px) { .card-visual { grid-column: span 4; height: auto; } }
-        
-        .card-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.5s; }
-        .card-visual:hover img { opacity: 1; transform: scale(1.05); }
-
-        /* Cards Pequenos (Stats) - Imitando os quadrados da logo */
-        .card-stat {
-            grid-column: span 6;
-            text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            padding: 30px;
-        }
-        @media (min-width: 1024px) { .card-stat { grid-column: span 3; } }
-
-        /* Indicador de cor no topo do card (Estilo da Logo) */
-        .dot-indicator { width: 15px; height: 15px; border-radius: 4px; margin-bottom: 15px; box-shadow: 0 0 10px currentColor; }
-        
-        .stat-num { font-size: 2.5rem; font-weight: 800; display: block; color: white; }
-        .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-
-        /* --- CARROSSEL --- */
-        .section-title {
-            text-align: center; font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;
-        }
-        
-        .slider-track {
-            display: flex; gap: 20px;
-            overflow-x: auto; scroll-snap-type: x mandatory;
-            padding: 20px 5% 40px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        .slider-track::-webkit-scrollbar { display: none; }
-
-        .slide-item {
-            flex: 0 0 85%; max-width: 350px; height: 450px;
-            scroll-snap-align: center;
-            /* Squircle Style */
-            background: var(--bg-card);
-            border-radius: var(--radius-squircle);
-            box-shadow: var(--shadow-elevation);
-            overflow: hidden;
-            position: relative;
-        }
-        @media (min-width: 1024px) { .slide-item { flex: 0 0 300px; } }
-
-        .slide-item img {
-            width: 100%; height: 100%; object-fit: cover;
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%); /* Fade suave embaixo */
-        }
-        
-        .slide-caption {
-            position: absolute; bottom: 0; left: 0; width: 100%;
-            padding: 25px;
-        }
-        .tag { 
-            display: inline-block; padding: 5px 10px; border-radius: 8px; 
-            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: black;
-        }
-
-        /* --- VIDEO AREA --- */
-        .video-wrapper {
-            margin: 0 auto 80px; max-width: 1200px; padding: 0 20px;
-        }
-        .video-card {
-            border-radius: var(--radius-squircle);
-            overflow: hidden;
-            box-shadow: var(--shadow-elevation);
-            background: black;
-            position: relative;
-        }
-        .play-btn {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 70px; height: 70px; background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px); border-radius: 20px; /* Play Squircle */
-            display: flex; align-items: center; justify-content: center;
-            pointer-events: none;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: black; border-top: 1px solid #222;
-            padding: 60px 20px; text-align: center; color: #666;
-        }
-
-        /* --- WHATSAPP FLUTUANTE (O Original) --- */
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
-            width: 65px; height: 65px;
-            background: #25d366; color: white;
-
-            text-decoration: none;
-            
-            /* O Estilo que você amou */
-            border-radius: 20px; 
-            border: none;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-            
-            display: flex; align-items: center; justify-content: center;
-            font-size: 32px; transition: 0.3s; z-index: 900;
-        }
-        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.7); background: #20ba5a; }
-
-/* Container Geral */
-.video-wrapper {
-    margin: 40px auto 80px;
-    max-width: 1200px;
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     position: relative;
 }
 
-/* O Trilho que Rola (Carrossel) */
-.slider-track {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; /* Faz o card travar no centro */
-    padding: 20px 20px 40px; /* Espaço para a sombra não cortar */
-    -webkit-overflow-scrolling: touch; /* Rolagem suave no iPhone */
-    scrollbar-width: none; /* Esconde barra de rolagem (Firefox) */
+body {
+    background-color: var(--c-white);
+    color: var(--c-black);
+    /* Grade de fundo */
+    background-image: 
+        linear-gradient(var(--c-gray) 1px, transparent 1px),
+        linear-gradient(90deg, var(--c-gray) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
-.slider-track::-webkit-scrollbar { display: none; /* Esconde barra (Chrome) */ }
 
-/* O Card do Vídeo */
-.video-card {
-    flex: 0 0 85%; /* No celular, ocupa 85% da tela */
-    max-width: 300px;
-    height: 500px;
-    border-radius: 24px; /* Squircle */
+/* Garante que containers não vazem a tela */
+.hero-container, section, footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* ==========================================================================
+   2. ESTILO MOBILE (O "ARROZ COM FEIJÃO" BEM FEITO)
+   ========================================================================== */
+
+/* --- HEADER (CORREÇÃO DE PULO) --- */
+header {
+    position: fixed; 
+    top: 15px; 
+    /* Truque para centralizar sem bugs de zoom */
+    left: 0; 
+    right: 0; 
+    margin: 0 auto; 
+    width: 94%; /* Deixa uma margem segura nas laterais */
+    
+    height: 70px;
+    background: var(--c-white);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    padding: 0 15px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000; /* Z-index alto para ficar acima de tudo */
+}
+
+header img { 
+    height: 60px; /* Logo menor no celular */
+    padding: 5px;
+}
+
+.nav-cta {
+    background: var(--c-black); 
+    color: var(--c-white);
+    padding: 8px 14px; 
+    font-weight: 700; text-decoration: none; font-size: 0.8rem;
+    border: 2px solid var(--c-black);
+    transition: 0.2s;
+}
+
+.nav-cta:hover { 
+    background: var(--c-white); color: var(--c-black); 
+    box-shadow: 3px 3px 0px var(--c-black);
+}
+
+/* --- HERO & GRID SYSTEM --- */
+.hero-container {
+    /* Margem superior segura para não esconder atrás do header */
+    margin-top: 110px; 
+    margin-bottom: 60px;
+    padding: 0 15px; /* Padding lateral seguro */
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 15px; /* Gap menor no celular */
+}
+
+/* --- CARD MONDRIAN BASE --- */
+.mondrian-card {
+    background: var(--c-white);
+    border: var(--border-thick);
+    box-shadow: var(--shadow-hard);
+    border-radius: var(--radius-sharp);
+    position: relative;
     overflow: hidden;
-    position: relative;
-    background: #000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    scroll-snap-align: center; /* Alinha ao centro ao soltar */
-    transition: transform 0.3s;
-    cursor: pointer;
 }
 
-/* Desktop: Cards menores */
-@media (min-width: 768px) {
-    .video-card { flex: 0 0 300px; }
+/* CARD: Principal (Texto) */
+.card-main {
+    grid-column: span 12; /* Ocupa largura total */
+    padding: 25px;
+    display: flex; flex-direction: column; justify-content: center;
+    min-height: auto; /* Altura automática baseada no texto */
 }
 
-.video-card:hover { transform: translateY(-5px); }
+.card-main h1 {
+    font-size: 1.8rem; /* Fonte ajustada para não quebrar */
+    line-height: 1.1; font-weight: 700; margin-bottom: 15px;
+    text-transform: uppercase; letter-spacing: -1px;
+}
 
-/* Vídeo preenchendo tudo */
-.video-card video {
+.highlight { 
+    background-color: var(--c-cyan);
+    color: var(--c-black);
+    padding: 0 5px;
+    line-height:3rem;
+}
+
+.deco-dots { display: flex; gap: 8px; margin-bottom: 20px; }
+.dot { width: 10px; height: 10px; border: 2px solid var(--c-black); }
+.bg-red { background: var(--c-red); }
+.bg-yellow { background: var(--c-yellow); }
+.bg-blue { background: var(--c-cyan); }
+.bg-black { background: var(--c-black); color: white; }
+
+.btn-hero {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--c-red); color: white;
+    padding: 14px 20px;
+    font-size: 1.1rem; font-weight: 700; text-decoration: none;
+    border: var(--border-thick);
+    box-shadow: 4px 4px 0px var(--c-black);
+    margin-top: 20px; width: 100%; /* Botão full width no celular */
+    text-align: center;
+    gap: 15px
+}
+.btn-hero i{
+        font-size: 3rem;
+    }
+/* CARD: Visual (Imagem) */
+.card-visual {
+    grid-column: span 12;
+    height: 250px; /* Altura fixa para imagem */
+    padding: 0;
+}
+.card-visual img, .card-visual video { 
+    width: 100%; height: 100%; object-fit: cover; 
+    border-bottom: var(--border-thick); 
+}
+.card-label {
+    position: absolute; bottom: 0; right: 0;
+    background: var(--c-yellow); 
+    border-top: var(--border-thick); border-left: var(--border-thick);
+    padding: 6px 12px; font-weight: 700; font-size: 0.75rem;
+}
+
+/* CARD: Stats (CORREÇÃO DO QUADRADO GIGANTE) */
+.card-stat {
+    grid-column: span 6; /* Metade da tela */
+    text-align: center; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 15px 5px;
+    /* REMOVI O ASPECT-RATIO 1/1 */
+    min-height: 140px; /* Altura fixa razoável */
+}
+
+.icon-lg { font-size: 1.8rem; margin-bottom: 8px; }
+.stat-num { font-size: 1.5rem; font-weight: 700; display: block; }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; font-weight: 700; }
+
+/* --- SEÇÕES & TÍTULOS --- */
+.section-title {
+    font-size: 1.2rem; font-weight: 700; text-transform: uppercase;
+    background: var(--c-black); color: white; display: inline-block;
+    padding: 8px 12px; margin-bottom: 20px;
+    box-shadow: 4px 4px 0px var(--c-cyan);
+}
+.title-container { text-align: center; margin-bottom: 30px; padding: 0 20px; }
+.highlight-text { color: var(--c-cyan); }
+
+/* --- SLIDERS (CARROSSEL MOBILE) --- */
+.slider-track {
+    display: flex; gap: 15px;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory;
+    padding: 10px 20px 30px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slide-item, .video-card {
+    flex: 0 0 85%; /* Card ocupa 85% da tela */
+    max-width: 300px;
+    height: 400px;
+    scroll-snap-align: center;
+    padding: 0;
+}
+
+.slide-item img {
+    width: 100%; height: 85%; object-fit: cover;
+    border-bottom: var(--border-thick);
+}
+.slide-caption {
+    height: 15%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; letter-spacing: 1px; font-size: 0.8rem;
+}
+.slide-caption.text-white { color: white; }
+
+/* --- VÍDEO --- */
+.video-wrapper { margin: 40px auto; max-width: 1200px; }
+
+.video-card { background: #000; cursor: pointer; }
+.video-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.play-btn {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 50px; height: 50px;
+    background: var(--c-yellow);
+    border: var(--border-thick);
+    box-shadow: 4px 4px 0px var(--c-black);
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+}
+.play-btn i { color: black; font-size: 1.2rem; margin-left: 2px; }
+.video-card.playing .play-btn { opacity: 0; }
+
+/* Garante que o vídeo do Card Visual preencha tudo */
+.card-visual video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Faz o vídeo cobrir o card sem distorcer */
     display: block;
+    border-bottom: var(--border-thick); /* Mantém a borda preta embaixo igual às fotos */
 }
 
-/* Botão Play Customizado */
-.play-btn {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px; height: 70px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
+/* --- FOOTER & FLOAT --- */
+footer {
+    background: var(--c-black); color: white;
+    padding: 40px 20px; text-align: center;
+    border-top: 5px solid var(--c-cyan);
+    margin-top: 60px;
+}
+
+.whatsapp-float {
+    position: fixed; bottom: 20px; right: 20px;
+    width: 60px; height: 60px;
+    background: #25d366; color: white;
+    border: var(--border-thick);
+    box-shadow: 6px 6px 0px var(--c-black);
     display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s;
-    pointer-events: none; /* Permite clicar no vídeo através do botão */
+    font-size: 30px; z-index: 900;
+    text-decoration: none; border-radius: 0;
 }
 
-.play-btn i {
-    color: white;
-    font-size: 2rem;
-    margin-left: 5px; /* Ajuste visual do ícone play */
-}
 
-/* Quando o vídeo estiver tocando, esconde o botão */
-.video-card.playing .play-btn {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.5);
-}
+/* ==========================================================================
+   3. VERSÃO DESKTOP (OVERRIDES / TELAS GRANDES)
+   Aqui mudamos o layout para PC, Tablets Grandes, etc.
+   ========================================================================== */
+@media (min-width: 1024px) {
 
+    /* HEADER: Mais largo e elegante */
+    header {
+        width: 100%; max-width: 90dvw;
+        height: 15dvh;
+        top: 30px;
+        padding: 0 40px;
+    }
+    header img { 
+        height: 100px;
+        padding: 8px;
+    }
+
+    .nav-cta {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    /* HERO: Margens maiores e Grid Ajustado */
+    .hero-container {
+        width: auto;
+        margin: 180px 3dvw 100px;
+        padding: 0 40px;
+    }
+
+    .bento-grid {
+        gap: 30px;
+        width: 100%;
+    }
+
+    /* CARD MAIN: Ocupa 2/3 da tela */
+    .card-main { 
+        grid-column: span 8; 
+        padding: 60px;
+    }
+    .card-main h1 { font-size: 3.5rem; }
+    .btn-hero {
+        padding: 20px 40px;
+        font-size: 1.3rem; 
+    }
+
+    
+    .highlight { 
+        line-height:6rem;
+    }
+
+    /* CARD VISUAL: Ocupa 1/3 da tela */
+    .card-visual { 
+        grid-column: span 4; 
+        min-height: 100%; /* Acompanha altura do texto */
+    }
+
+    /* STATS: Ocupam 1/4 da tela cada (linha de 4) */
+    .card-stat { 
+        grid-column: span 3; 
+        aspect-ratio: auto; 
+        height: 250px; 
+    }
+    .icon-lg { font-size: 3rem; }
+    .stat-num { font-size: 3rem; }
+
+    /* SLIDERS -> VIRAM GRIDS (GALERIA) */
+    /* Removemos o scroll horizontal e fazemos uma grade bonita */
+    #projetos .slider-track, 
+    #video-slider {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas lado a lado */
+        gap: 30px;
+        overflow: visible;
+        margin: 0 auto;
+        padding: 0 40px 40px;
+    }
+
+    /* ITENS DA GALERIA */
+    .slide-item, .video-card {
+        flex: unset; /* Desliga o flexbox do mobile */
+        max-width: 100%;
+        height: 400px;
+    }
+
+    /* HOVER EFFECTS (Só fazem sentido no Desktop) */
+    .video-card:hover .play-btn { 
+        transform: translate(-50%, -50%) scale(1.1); 
+        box-shadow: 8px 8px 0px var(--c-black); 
+    }
+    
+    .whatsapp-float {
+        bottom: 30px; right: 30px;
+        width: 70px; height: 70px; font-size: 35px;
+    }
+    .whatsapp-float:hover { 
+        transform: translate(-4px, -4px); 
+        box-shadow: 12px 12px 0px var(--c-black); 
+        background: #128C7E;
+    }
+}

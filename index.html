@@ -7,148 +7,146 @@
     <title>Connect Audiovisual | Painéis de LED</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="./style/main.css" rel="stylesheet">
     
+    <link href="./style/main.css" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <img src="./images/connect-logo.png" alt="Connect Logo">
-        <a href="https://wa.me/5511989777692" class="nav-cta">Orçamento</a>
+        <img src="./images/connect-logo(1).png" alt="Connect Logo">
+        <a href="https://wa.me/5511989777692" class="nav-cta">ORÇAMENTO</a>
     </header>
 
     <div class="hero-container">
         <div class="bento-grid">
             
-            <div class="squircle-card card-main" data-aos="fade-up">
-                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
-                    <div style="width: 12px; height: 12px; background: var(--led-red); border-radius: 3px;"></div>
-                    <div style="width: 12px; height: 12px; background: var(--led-yellow); border-radius: 3px;"></div>
-                    <div style="width: 12px; height: 12px; background: var(--led-blue); border-radius: 3px;"></div>
+            <div class="mondrian-card card-main" data-aos="fade-up">
+                <div class="deco-dots">
+                    <div class="dot bg-red"></div>
+                    <div class="dot bg-yellow"></div>
+                    <div class="dot bg-blue"></div>
                 </div>
                 
-                <h1>Sua Marca <br><span class="highlight">GIGANTE.</span></h1>
-                <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 500px; line-height: 1.6;">
-                    Locação de painéis de LED 4K para eventos que exigem impacto visual.
-                </p>
+                <h1>SUA MARCA <br><span class="highlight"">GIGANTE.</span></h1>
+                <p>Locação de painéis de LED 4K para eventos que exigem impacto visual máximo.</p>
                 
                 <a href="https://wa.me/5511989777692" class="btn-hero">
-                    <i class="fab fa-whatsapp"></i> Falar com Consultor
+                    <i class="fab fa-whatsapp"></i> PEÇA SEU ORÇAMENTO
                 </a>
             </div>
 
-            <div class="squircle-card card-visual" data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?auto=format&fit=crop&w=800&q=80">
-                <div style="position: absolute; bottom: 20px; left: 20px; font-weight: 800; font-size: 1.2rem; text-shadow: 0 2px 10px black;">
-                    Grandes Shows
-                </div>
+            <div class="mondrian-card card-visual" data-aos="fade-left">
+                <video autoplay muted loop playsinline>
+                    <source src="./videos/pista-paris.mp4" type="video/mp4">
+                </video>
+                <div class="card-label">GRANDES SHOWS</div>
             </div>
 
-            <div class="squircle-card card-stat" data-aos="fade-up" data-aos-delay="100">
-                <div class="dot-indicator" style="background: var(--led-yellow); color: var(--led-yellow);"></div>
+            <div class="mondrian-card card-stat bg-yellow" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-headset icon-lg"></i>
                 <span class="stat-num">24h</span>
                 <span class="stat-label">Suporte</span>
             </div>
 
-            <div class="squircle-card card-stat" data-aos="fade-up" data-aos-delay="200">
-                <div class="dot-indicator" style="background: var(--led-blue); color: var(--led-blue);"></div>
+            <div class="mondrian-card card-stat bg-blue" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-calendar-check icon-lg"></i>
                 <span class="stat-num">500+</span>
                 <span class="stat-label">Eventos</span>
             </div>
             
-            <div class="squircle-card card-stat" data-aos="fade-up" data-aos-delay="300">
-                <div class="dot-indicator" style="background: var(--led-red); color: var(--led-red);"></div>
+            <div class="mondrian-card card-stat bg-red" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-tv icon-lg"></i>
                 <span class="stat-num">P2</span>
                 <span class="stat-label">Resolução 4K</span>
             </div>
 
-            <div class="squircle-card card-stat" style="background: #111; border: 1px solid #333;" data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-truck-fast" style="font-size: 2rem; color: #fff; margin-bottom: 10px;"></i>
-                <span class="stat-label" style="color: white;">Montagem Rápida</span>
+            <div class="mondrian-card card-stat bg-black text-white" data-aos="fade-up" data-aos-delay="400" style="border: 3px solid var(--c-black);
+    box-shadow: 8px 8px 0px var(--c-cyan);">
+                <i class="fas fa-truck-fast icon-lg" style="color: var(--c-cyan);"></i>
+                <span class="stat-label" style="color: white; font-size:1.2rem;">Montagem<br>Rápida</span>
             </div>
 
         </div>
     </div>
 
     <section id="projetos">
-        <h2 class="section-title">Experiências <span style="color: var(--led-blue);">Visuais</span></h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Projetos recentes entregues com excelência.</p>
+        <div class="title-container">
+            <h2 class="section-title">EXPERIÊNCIAS <span class="highlight-text">VISUAIS</span></h2>
+        </div>
         
         <div class="slider-track" data-aos="fade-up">
-            <div class="slide-item">
-                <img src="./images/festa-debutante.jpeg">
-                <div class="slide-caption">
-                    <span class="tag" style="background: var(--led-yellow);">Festa</span>
-                    <h3>Debutante</h3>
+            <div class="slide-item mondrian-card">
+                <img src="./images/festa-debutante.jpeg" alt="Debutante">
+                <div class="slide-caption bg-yellow">
+                    <h3>DEBUTANTE</h3>
                 </div>
             </div>
-            <div class="slide-item">
-                <img src="./images/festa-casamento.jpeg">
-                <div class="slide-caption">
-                    <span class="tag" style="background: var(--led-red); color: white;">Eventos</span>
-                    <h3>Casamento</h3>
+            <div class="slide-item mondrian-card">
+                <img src="./images/festa-casamento.jpeg" alt="Casamento">
+                <div class="slide-caption bg-red text-white">
+                    <h3>CASAMENTO</h3>
                 </div>
             </div>
-            <div class="slide-item">
-                <img src="./images/festa-infantil.jpeg">
-                <div class="slide-caption">
-                    <span class="tag" style="background: var(--led-blue);">Kids</span>
-                    <h3>Buffet Infantil</h3>
+            <div class="slide-item mondrian-card">
+                <img src="./images/festa-infantil.jpeg" alt="Infantil">
+                <div class="slide-caption bg-blue">
+                    <h3>BUFFET KIDS</h3>
                 </div>
             </div>
-            <div class="slide-item">
-                <img src="./images/palco.jpeg">
-                <div class="slide-caption">
-                    <span class="tag" style="background: white;">Show</span>
-                    <h3>Palco Principal</h3>
+            <div class="slide-item mondrian-card">
+                <img src="./images/palco.jpeg" alt="Palco">
+                <div class="slide-caption bg-white">
+                    <h3>PALCO PRINCIPAL</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="video-wrapper">
-    <h2 class="section-title" style="font-size: 1.5rem; text-align: left; margin-bottom: 20px; padding-left: 20px;">Nossa Tecnologia em Ação</h2>
-    
-    <div class="slider-track" id="video-slider">
+        <div class="title-container" style="text-align: left; margin-bottom: 30px;">
+            <h2 class="section-title">TECNOLOGIA EM AÇÃO</h2>
+        </div>
         
-        <div class="video-card squircle-card" data-aos="fade-right">
-            <video loop playsinline poster="https://via.placeholder.com/300x500/000/fff?text=Video+1">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            </video>
-            <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
+        <div class="slider-track" id="video-slider">
+            
+            <div class="video-card mondrian-card" data-aos="fade-right">
+                <video loop playsinline poster="./videos/festa-debutante.mp4">
+                    <source src="./videos/aniversario-infantil.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
 
-        <div class="video-card squircle-card" data-aos="fade-right" data-aos-delay="100">
-            <video loop playsinline poster="https://via.placeholder.com/300x500/111/fff?text=Video+2">
-                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-            </video>
-            <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
+            <div class="video-card mondrian-card" data-aos="fade-right" data-aos-delay="100">
+                <video loop playsinline>
+                    <source src="./videos/auerasdj.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
 
-        <div class="video-card squircle-card" data-aos="fade-right" data-aos-delay="200">
-            <video loop playsinline poster="https://via.placeholder.com/300x500/222/fff?text=Video+3">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            </video>
-            <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
+            <div class="video-card mondrian-card" data-aos="fade-right" data-aos-delay="200">
+                <video loop playsinline>
+                    <source src="./videos/festa-debutante.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
 
-        <div class="video-card squircle-card" data-aos="fade-right" data-aos-delay="300">
-            <video loop playsinline poster="https://via.placeholder.com/300x500/333/fff?text=Video+4">
-                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-            </video>
-            <div class="play-btn"><i class="fas fa-play"></i></div>
-        </div>
+            <div class="video-card mondrian-card" data-aos="fade-right" data-aos-delay="300">
+                <video loop playsinline>
+                    <source src="./videos/festa-palco.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn"><i class="fas fa-play"></i></div>
+            </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 
     <footer>
-        <img src="./images/connect-logo.png" alt="Logo" style="height: 50px; margin-bottom: 20px;">
-        <p>© 2026 Connect Audiovisual. Design Premium.</p>
+        <img src="./images/connect-logo.png" alt="Logo" style="height: 50px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+        <p>© 2026 Connect Audiovisual.</p>
     </footer>
 
     <a href="https://wa.me/5511989777692" class="whatsapp-float">
@@ -158,7 +156,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./script/main.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 800, once: true });
+        });
     </script>
 </body>
 </html>
