@@ -363,11 +363,12 @@ footer {
         line-height:6rem;
     }
 
-    /* CARD VISUAL: Ocupa 1/3 da tela, altura grande no desktop */
+    /* CARD VISUAL: Grande e em destaque no desktop (8 colunas, 3 linhas) */
     .card-visual { 
-        grid-column: span 4; 
-        height: 80dvh;
-        min-height: 100%; /* Acompanha altura do texto */
+        grid-column: span 8; 
+        grid-row: span 3;
+        height: auto;
+        min-height: 500px;
     }
 
     /* STATS: Ocupam 1/4 da tela cada (linha de 4) */

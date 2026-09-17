@@ -23,9 +23,17 @@
 
     <div class="hero-container">
         <div class="bento-grid">
-            
-            <!-- 3 SERVIÇOS no lugar do card-main -->
-            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-yellow);" data-aos="fade-up">
+
+            <!-- VÍDEO HERO (destaque principal) -->
+            <div class="mondrian-card card-visual" data-aos="fade-up">
+                <video autoplay muted loop playsinline webkit-playsinline poster="./images/poster-video.jpg" id="video-hero">
+                    <source src="./videos/hero-video.mp4" type="video/mp4">
+                </video>
+                <div class="card-label">GRANDES SHOWS</div>
+            </div>
+
+            <!-- 3 SERVIÇOS (ao lado do vídeo no desktop) -->
+            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-yellow);" data-aos="fade-up" data-aos-delay="100">
                 <i class="fas fa-handshake" style="font-size: 2rem; margin-bottom: 10px; color: #000;"></i>
                 <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #000; text-transform: uppercase;">Locação</h3>
                 <p style="color: #333; line-height: 1.5; font-size: 0.85rem;">
@@ -33,7 +41,7 @@
                 </p>
             </div>
 
-            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-cyan); color: #000;" data-aos="fade-up" data-aos-delay="100">
+            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-cyan); color: #000;" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-tags" style="font-size: 2rem; margin-bottom: 10px;"></i>
                 <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">Venda</h3>
                 <p style="color: #333; line-height: 1.5; font-size: 0.85rem;">
@@ -41,19 +49,12 @@
                 </p>
             </div>
 
-            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-red); color: white;" data-aos="fade-up" data-aos-delay="200">
+            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-red); color: white;" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-tools" style="font-size: 2rem; margin-bottom: 10px;"></i>
                 <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">Manutenção</h3>
                 <p style="color: #eee; line-height: 1.5; font-size: 0.85rem;">
                     Assistência técnica especializada, reparo de módulos e troca de peças para garantir máxima durabilidade.
                 </p>
-            </div>
-
-            <div class="mondrian-card card-visual" data-aos="fade-left">
-                <video autoplay muted loop playsinline webkit-playsinline poster="./images/poster-video.jpg" id="video-hero">
-                    <source src="./videos/hero-video.mp4" type="video/mp4">
-                </video>
-                <div class="card-label">GRANDES SHOWS</div>
             </div>
 
             <div class="mondrian-card card-stat bg-yellow" data-aos="fade-up" data-aos-delay="100">
