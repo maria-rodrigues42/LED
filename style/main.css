@@ -379,7 +379,7 @@ footer {
     .icon-lg { font-size: 3rem; }
     .stat-num { font-size: 3rem; }
 
-    /* SERVIÇOS: No desktop ficam maiores com descrição */
+    /* SERVIÇOS: No desktop ocupam a área do card-main (8 colunas / 3) */
     .service-card {
         grid-column: span 4 !important;
         padding: 30px !important;
