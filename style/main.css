@@ -159,6 +159,24 @@ header img {
     font-size: 2.5rem;
 }
 
+/* CARD: Serviços (Locação, Venda, Manutenção) no Hero */
+.service-card {
+    grid-column: span 4 !important; /* 3 cards lado a lado no mobile */
+    padding: 15px 10px !important;
+    text-align: center;
+}
+.service-card i {
+    font-size: 1.4rem !important;
+    margin-bottom: 6px !important;
+}
+.service-card h3 {
+    font-size: 0.65rem !important;
+    margin-bottom: 0 !important;
+}
+.service-card p {
+    display: none; /* Esconde descrição no mobile pra ficar compacto */
+}
+
 /* CARD: Visual (Imagem/Vídeo) */
 .card-visual {
     grid-column: span 12;
@@ -360,6 +378,24 @@ footer {
     }
     .icon-lg { font-size: 3rem; }
     .stat-num { font-size: 3rem; }
+
+    /* SERVIÇOS: No desktop ficam maiores com descrição */
+    .service-card {
+        grid-column: span 4 !important;
+        padding: 30px !important;
+        text-align: left;
+    }
+    .service-card i {
+        font-size: 2rem !important;
+        margin-bottom: 12px !important;
+    }
+    .service-card h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 8px !important;
+    }
+    .service-card p {
+        display: block;
+    }
 
     /* SLIDERS -> VIRAM GRIDS (GALERIA) */
     /* Removemos o scroll horizontal e fazemos uma grade bonita */
