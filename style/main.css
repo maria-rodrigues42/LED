@@ -39,6 +39,8 @@ body {
         linear-gradient(var(--c-gray) 1px, transparent 1px),
         linear-gradient(90deg, var(--c-gray) 1px, transparent 1px);
     background-size: 40px 40px;
+    /* Espaço no fundo para o botão flutuante não tapar conteúdo */
+    padding-bottom: 80px;
 }
 
 /* Garante que containers não vazem a tela */
@@ -146,20 +148,21 @@ header img {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     background: var(--c-red); color: white;
     padding: 14px 20px;
-    font-size: 1.1rem; font-weight: 700; text-decoration: none;
+    font-size: 1rem; font-weight: 700; text-decoration: none;
     border: var(--border-thick);
     box-shadow: 4px 4px 0px var(--c-black);
     margin-top: 20px; width: 100%; /* Botão full width no celular */
     text-align: center;
-    gap: 15px
+    gap: 15px;
 }
 .btn-hero i{
-        font-size: 3rem;
-    }
-/* CARD: Visual (Imagem) */
+    font-size: 2.5rem;
+}
+
+/* CARD: Visual (Imagem/Vídeo) */
 .card-visual {
     grid-column: span 12;
-    height: 250px; /* Altura fixa para imagem */
+    height: 300px; /* Altura fixa razoável no celular */
     padding: 0;
 }
 .card-visual img, .card-visual video { 
@@ -259,17 +262,31 @@ footer {
     padding: 40px 20px; text-align: center;
     border-top: 5px solid var(--c-cyan);
     margin-top: 60px;
+    margin-bottom: 0;
 }
 
+/* --- BOTÃO FLUTUANTE "SOLICITAR ORÇAMENTO" (MOBILE FIRST) --- */
 .whatsapp-float {
-    position: fixed; bottom: 20px; right: 20px;
-    width: auto; height: auto; padding: 15px 25px;
-    background: #25d366; color: white;
-    border: var(--border-thick);
-    box-shadow: 6px 6px 0px var(--c-black);
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    font-size: 1rem; font-weight: 700; text-transform: uppercase;
-    z-index: 900; text-decoration: none; border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 18px 15px;
+    background: #25d366;
+    color: white;
+    border-top: var(--border-thick);
+    box-shadow: 0 -4px 0px var(--c-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 900;
+    text-decoration: none;
+    border-radius: 0;
 }
 
 
@@ -278,6 +295,10 @@ footer {
    Aqui mudamos o layout para PC, Tablets Grandes, etc.
    ========================================================================== */
 @media (min-width: 1024px) {
+
+    body {
+        padding-bottom: 0;
+    }
 
     /* HEADER: Mais largo e elegante */
     header {
@@ -324,9 +345,10 @@ footer {
         line-height:6rem;
     }
 
-    /* CARD VISUAL: Ocupa 1/3 da tela */
+    /* CARD VISUAL: Ocupa 1/3 da tela, altura grande no desktop */
     .card-visual { 
         grid-column: span 4; 
+        height: 80dvh;
         min-height: 100%; /* Acompanha altura do texto */
     }
 
@@ -364,9 +386,17 @@ footer {
         box-shadow: 8px 8px 0px var(--c-black); 
     }
     
+    /* No desktop, o botão flutuante fica no canto inferior direito */
     .whatsapp-float {
-        bottom: 30px; right: 30px;
-        width: auto; height: auto; padding: 20px 30px; font-size: 1.2rem;
+        bottom: 30px;
+        right: 30px;
+        left: auto;
+        width: auto;
+        padding: 20px 30px;
+        font-size: 1.1rem;
+        border: var(--border-thick);
+        box-shadow: 6px 6px 0px var(--c-black);
+        border-radius: 0;
     }
     .whatsapp-float:hover { 
         transform: translate(-4px, -4px); 
