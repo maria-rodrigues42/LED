@@ -352,6 +352,8 @@ footer {
        ======================================== */
     .card-visual { 
         grid-column: span 4; 
+        width: 100%;
+        aspect-ratio: auto; /* Remove o 9:16 do mobile para preencher o grid */
         height: calc(100dvh - 200px); /* Se adapta à altura da janela */
         max-height: 550px; /* Limite máximo agradável */
         min-height: 450px;
