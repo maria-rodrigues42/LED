@@ -22,9 +22,9 @@
     </header>
 
     <div class="hero-container">
-        <div class="bento-grid">
+        <div class="bento-grid hero-grid">
 
-            <!-- VÍDEO HERO (destaque principal) -->
+            <!-- VÍDEO HERO -->
             <div class="mondrian-card card-visual" data-aos="fade-up">
                 <video autoplay muted loop playsinline webkit-playsinline poster="./images/poster-video.jpg" id="video-hero">
                     <source src="./videos/hero-video.mp4" type="video/mp4">
@@ -32,29 +32,36 @@
                 <div class="card-label">GRANDES SHOWS</div>
             </div>
 
-            <!-- 3 SERVIÇOS (ao lado do vídeo no desktop) -->
-            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-yellow);" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-handshake" style="font-size: 2rem; margin-bottom: 10px; color: #000;"></i>
-                <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #000; text-transform: uppercase;">Locação</h3>
-                <p style="color: #333; line-height: 1.5; font-size: 0.85rem;">
-                    Aluguel de painéis P2 e P3 para feiras, shows e eventos. Inclui montagem e técnico presencial.
-                </p>
-            </div>
+            <!-- CARD ÚNICO DE SERVIÇOS -->
+            <div class="mondrian-card services-box" data-aos="fade-up" data-aos-delay="100">
+                
+                <div class="service-item">
+                    <div class="service-icon bg-yellow"><i class="fas fa-handshake"></i></div>
+                    <div class="service-text">
+                        <h3>Locação</h3>
+                        <p>Aluguel de painéis P2 e P3 para feiras, shows e eventos.</p>
+                    </div>
+                </div>
 
-            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-cyan); color: #000;" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-tags" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">Venda</h3>
-                <p style="color: #333; line-height: 1.5; font-size: 0.85rem;">
-                    Comercialização de painéis de LED (Indoor e Outdoor) sob medida para igrejas, vitrines e projetos fixos.
-                </p>
-            </div>
+                <div class="service-item">
+                    <div class="service-icon bg-blue"><i class="fas fa-tags"></i></div>
+                    <div class="service-text">
+                        <h3>Venda</h3>
+                        <p>Painéis de LED Indoor e Outdoor sob medida para seu projeto.</p>
+                    </div>
+                </div>
 
-            <div class="mondrian-card service-card" style="grid-column: span 4; padding: 25px; background-color: var(--c-red); color: white;" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-tools" style="font-size: 2rem; margin-bottom: 10px;"></i>
-                <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase;">Manutenção</h3>
-                <p style="color: #eee; line-height: 1.5; font-size: 0.85rem;">
-                    Assistência técnica especializada, reparo de módulos e troca de peças para garantir máxima durabilidade.
-                </p>
+                <div class="service-item">
+                    <div class="service-icon bg-red" style="color: white;"><i class="fas fa-tools"></i></div>
+                    <div class="service-text">
+                        <h3>Manutenção</h3>
+                        <p>Assistência técnica, reparo de módulos e troca de peças.</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5511989777692?text=Oi%20gostaria%20de%20realizar%20um%20or%C3%A7amento" class="btn-hero">
+                    <i class="fab fa-whatsapp"></i> FALAR COM ESPECIALISTA
+                </a>
             </div>
 
             <div class="mondrian-card card-stat bg-yellow" data-aos="fade-up" data-aos-delay="100">

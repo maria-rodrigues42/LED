@@ -12,7 +12,7 @@
 
     /* Configuração "Pontuda" e "Sombra Grossa" */
     --border-thick: 3px solid var(--c-black);
-    --shadow-hard: 6px 6px 0px var(--c-black); /* Sombra um pouco menor no mobile */
+    --shadow-hard: 6px 6px 0px var(--c-black);
     --radius-sharp: 0px;
     --radius-slight: 4px;
 }
@@ -34,13 +34,11 @@ html, body {
 body {
     background-color: var(--c-white);
     color: var(--c-black);
-    /* Grade de fundo */
     background-image: 
         linear-gradient(var(--c-gray) 1px, transparent 1px),
         linear-gradient(90deg, var(--c-gray) 1px, transparent 1px);
     background-size: 40px 40px;
-    /* Espaço no fundo para o botão flutuante não tapar conteúdo */
-    padding-bottom: 80px;
+    padding-bottom: 70px;
 }
 
 /* Garante que containers não vazem a tela */
@@ -51,30 +49,27 @@ body {
 }
 
 /* ==========================================================================
-   2. ESTILO MOBILE (O "ARROZ COM FEIJÃO" BEM FEITO)
+   2. ESTILO MOBILE FIRST
    ========================================================================== */
 
-/* --- HEADER (CORREÇÃO DE PULO) --- */
+/* --- HEADER --- */
 header {
     position: fixed; 
     top: 15px; 
-    /* Truque para centralizar sem bugs de zoom */
-    left: 0; 
-    right: 0; 
+    left: 0; right: 0; 
     margin: 0 auto; 
-    width: 94%; /* Deixa uma margem segura nas laterais */
-    
+    width: 94%;
     height: 70px;
     background: var(--c-white);
     border: var(--border-thick);
     box-shadow: var(--shadow-hard);
     padding: 0 15px;
     display: flex; justify-content: space-between; align-items: center;
-    z-index: 1000; /* Z-index alto para ficar acima de tudo */
+    z-index: 1000;
 }
 
 header img { 
-    height: 60px; /* Logo menor no celular */
+    height: 60px;
     padding: 5px;
 }
 
@@ -92,18 +87,17 @@ header img {
     box-shadow: 3px 3px 0px var(--c-black);
 }
 
-/* --- HERO & GRID SYSTEM --- */
+/* --- HERO & GRID --- */
 .hero-container {
-    /* Margem superior segura para não esconder atrás do header */
     margin-top: 110px; 
     margin-bottom: 60px;
-    padding: 0 15px; /* Padding lateral seguro */
+    padding: 0 15px;
 }
 
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 15px; /* Gap menor no celular */
+    gap: 15px;
 }
 
 /* --- CARD MONDRIAN BASE --- */
@@ -116,16 +110,15 @@ header img {
     overflow: hidden;
 }
 
-/* CARD: Principal (Texto) */
+/* --- CARD MAIN (legado, não usado mais) --- */
 .card-main {
-    grid-column: span 12; /* Ocupa largura total */
+    grid-column: span 12;
     padding: 25px;
     display: flex; flex-direction: column; justify-content: center;
-    min-height: auto; /* Altura automática baseada no texto */
+    min-height: auto;
 }
-
 .card-main h1 {
-    font-size: 1.8rem; /* Fonte ajustada para não quebrar */
+    font-size: 1.8rem;
     line-height: 1.1; font-weight: 700; margin-bottom: 15px;
     text-transform: uppercase; letter-spacing: -1px;
 }
@@ -134,7 +127,7 @@ header img {
     background-color: var(--c-cyan);
     color: var(--c-black);
     padding: 0 5px;
-    line-height:3rem;
+    line-height: 3rem;
 }
 
 .deco-dots { display: flex; gap: 8px; margin-bottom: 20px; }
@@ -145,47 +138,35 @@ header img {
 .bg-black { background: var(--c-black); color: white; }
 
 .btn-hero {
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     background: var(--c-red); color: white;
-    padding: 14px 20px;
-    font-size: 1rem; font-weight: 700; text-decoration: none;
+    padding: 12px 18px;
+    font-size: 0.85rem; font-weight: 700; text-decoration: none;
     border: var(--border-thick);
     box-shadow: 4px 4px 0px var(--c-black);
-    margin-top: 20px; width: 100%; /* Botão full width no celular */
-    text-align: center;
-    gap: 15px;
-}
-.btn-hero i{
-    font-size: 2.5rem;
-}
-
-/* CARD: Serviços (Locação, Venda, Manutenção) no Hero */
-.service-card {
-    grid-column: span 4 !important; /* 3 cards lado a lado no mobile */
-    padding: 15px 10px !important;
+    margin-top: 15px; width: 100%;
     text-align: center;
 }
-.service-card i {
-    font-size: 1.4rem !important;
-    margin-bottom: 6px !important;
-}
-.service-card h3 {
-    font-size: 0.65rem !important;
-    margin-bottom: 0 !important;
-}
-.service-card p {
-    display: none; /* Esconde descrição no mobile pra ficar compacto */
+.btn-hero i {
+    font-size: 1.5rem;
 }
 
-/* CARD: Visual (Imagem/Vídeo) */
+/* ==========================================================================
+   CARD DE VÍDEO (HERO)
+   ========================================================================== */
 .card-visual {
     grid-column: span 12;
-    height: 300px; /* Altura fixa razoável no celular */
+    height: 250px;
     padding: 0;
 }
 .card-visual img, .card-visual video { 
     width: 100%; height: 100%; object-fit: cover; 
     border-bottom: var(--border-thick); 
+}
+.card-visual video {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+    border-bottom: var(--border-thick);
 }
 .card-label {
     position: absolute; bottom: 0; right: 0;
@@ -194,14 +175,58 @@ header img {
     padding: 6px 12px; font-weight: 700; font-size: 0.75rem;
 }
 
-/* CARD: Stats (CORREÇÃO DO QUADRADO GIGANTE) */
+/* ==========================================================================
+   SERVICES BOX (CARD ÚNICO COM OS 3 SERVIÇOS)
+   ========================================================================== */
+.services-box {
+    grid-column: span 12;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.service-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border: 2px solid var(--c-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.service-text h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.service-text p {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   STATS, TÍTULOS, SLIDERS
+   ========================================================================== */
+
+/* CARD: Stats */
 .card-stat {
-    grid-column: span 6; /* Metade da tela */
+    grid-column: span 6;
     text-align: center; 
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     padding: 15px 5px;
-    /* REMOVI O ASPECT-RATIO 1/1 */
-    min-height: 140px; /* Altura fixa razoável */
+    min-height: 140px;
 }
 
 .icon-lg { font-size: 1.8rem; margin-bottom: 8px; }
@@ -230,7 +255,7 @@ header img {
 .slider-track::-webkit-scrollbar { display: none; }
 
 .slide-item, .video-card {
-    flex: 0 0 85%; /* Card ocupa 85% da tela */
+    flex: 0 0 85%;
     max-width: 300px;
     height: 400px;
     scroll-snap-align: center;
@@ -247,7 +272,7 @@ header img {
 }
 .slide-caption.text-white { color: white; }
 
-/* --- VÍDEO --- */
+/* --- VÍDEO GALERIA --- */
 .video-wrapper { margin: 40px auto; max-width: 1200px; }
 
 .video-card { background: #000; cursor: pointer; }
@@ -265,175 +290,135 @@ header img {
 .play-btn i { color: black; font-size: 1.2rem; margin-left: 2px; }
 .video-card.playing .play-btn { opacity: 0; }
 
-/* Garante que o vídeo do Card Visual preencha tudo */
-.card-visual video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Faz o vídeo cobrir o card sem distorcer */
-    display: block;
-    border-bottom: var(--border-thick); /* Mantém a borda preta embaixo igual às fotos */
-}
-
 /* --- FOOTER & FLOAT --- */
 footer {
     background: var(--c-black); color: white;
     padding: 40px 20px; text-align: center;
     border-top: 5px solid var(--c-cyan);
     margin-top: 60px;
-    margin-bottom: 0;
 }
 
-/* --- BOTÃO FLUTUANTE "SOLICITAR ORÇAMENTO" (MOBILE FIRST) --- */
+/* --- BOTÃO FLUTUANTE ORÇAMENTO (MOBILE) --- */
 .whatsapp-float {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     width: 100%;
     padding: 18px 15px;
-    background: #25d366;
-    color: white;
+    background: #25d366; color: white;
     border-top: var(--border-thick);
     box-shadow: 0 -4px 0px var(--c-black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: 0.5px;
-    z-index: 900;
-    text-decoration: none;
-    border-radius: 0;
+    z-index: 900; text-decoration: none; border-radius: 0;
 }
 
 
 /* ==========================================================================
-   3. VERSÃO DESKTOP (OVERRIDES / TELAS GRANDES)
-   Aqui mudamos o layout para PC, Tablets Grandes, etc.
+   3. VERSÃO DESKTOP (min-width: 1024px)
    ========================================================================== */
 @media (min-width: 1024px) {
 
-    body {
-        padding-bottom: 0;
-    }
+    body { padding-bottom: 0; }
 
-    /* HEADER: Mais largo e elegante */
+    /* HEADER */
     header {
         width: 100%; max-width: 90dvw;
-        height: 15dvh;
+        height: 100px;
         top: 30px;
         padding: 0 40px;
     }
-    header img { 
-        height: 100px;
-        padding: 8px;
-    }
+    header img { height: 80px; padding: 8px; }
+    .nav-cta { padding: 12px 24px; font-size: 1rem; }
 
-    .nav-cta {
-        padding: 12px 24px;
-        font-size: 1rem;
-    }
-
-    /* HERO: Margens maiores e Grid Ajustado */
+    /* HERO */
     .hero-container {
         width: auto;
-        margin: 180px 3dvw 100px;
+        margin: 160px 3dvw 80px;
         padding: 0 40px;
     }
 
-    .bento-grid {
-        gap: 30px;
-        width: 100%;
-    }
+    .bento-grid { gap: 25px; width: 100%; }
 
-    /* CARD MAIN: Ocupa 2/3 da tela */
-    .card-main { 
-        grid-column: span 8; 
-        padding: 60px;
-    }
-    .card-main h1 { font-size: 3.5rem; }
-    .btn-hero {
-        padding: 20px 40px;
-        font-size: 1.3rem; 
-    }
-
-    
-    .highlight { 
-        line-height:6rem;
-    }
-
-    /* CARD VISUAL: Grande e em destaque no desktop (8 colunas, 3 linhas) */
+    /* ========================================
+       HERO GRID: Vídeo (7 cols) + Serviços (5 cols)
+       Tudo cabe na tela de uma vez!
+       ======================================== */
     .card-visual { 
-        grid-column: span 8; 
-        grid-row: span 3;
-        height: auto;
-        min-height: 500px;
+        grid-column: span 7; 
+        height: calc(100dvh - 300px); /* Cabe na tela */
+        max-height: 500px;
     }
 
-    /* STATS: Ocupam 1/4 da tela cada (linha de 4) */
+    .services-box {
+        grid-column: span 5;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .service-icon {
+        width: 50px; height: 50px; min-width: 50px;
+        font-size: 1.4rem;
+    }
+
+    .service-text h3 { font-size: 1.1rem; }
+    .service-text p { font-size: 0.85rem; }
+
+    .btn-hero {
+        padding: 18px 30px;
+        font-size: 1.1rem;
+        margin-top: auto;
+    }
+    .btn-hero i { font-size: 2rem; }
+
+    .card-main { grid-column: span 8; padding: 60px; }
+    .card-main h1 { font-size: 3.5rem; }
+
+    .highlight { line-height: 6rem; }
+
+    /* STATS */
     .card-stat { 
         grid-column: span 3; 
         aspect-ratio: auto; 
-        height: 250px; 
+        height: 200px; 
     }
     .icon-lg { font-size: 3rem; }
     .stat-num { font-size: 3rem; }
 
-    /* SERVIÇOS: No desktop ocupam a área do card-main (8 colunas / 3) */
-    .service-card {
-        grid-column: span 4 !important;
-        padding: 30px !important;
-        text-align: left;
-    }
-    .service-card i {
-        font-size: 2rem !important;
-        margin-bottom: 12px !important;
-    }
-    .service-card h3 {
-        font-size: 1.3rem !important;
-        margin-bottom: 8px !important;
-    }
-    .service-card p {
-        display: block;
-    }
-
-    /* SLIDERS -> VIRAM GRIDS (GALERIA) */
-    /* Removemos o scroll horizontal e fazemos uma grade bonita */
+    /* SLIDERS -> GRIDS */
     #projetos .slider-track, 
     #video-slider {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas lado a lado */
+        grid-template-columns: repeat(4, 1fr);
         gap: 30px;
         overflow: visible;
         margin: 0 auto;
         padding: 0 40px 40px;
     }
 
-    /* ITENS DA GALERIA */
     .slide-item, .video-card {
-        flex: unset; /* Desliga o flexbox do mobile */
+        flex: unset;
         max-width: 100%;
         height: 400px;
     }
 
-    /* HOVER EFFECTS (Só fazem sentido no Desktop) */
+    /* HOVER */
     .video-card:hover .play-btn { 
         transform: translate(-50%, -50%) scale(1.1); 
         box-shadow: 8px 8px 0px var(--c-black); 
     }
     
-    /* No desktop, o botão flutuante fica no canto inferior direito */
+    /* FLOAT DESKTOP */
     .whatsapp-float {
-        bottom: 30px;
-        right: 30px;
-        left: auto;
+        bottom: 30px; right: 30px; left: auto;
         width: auto;
         padding: 20px 30px;
         font-size: 1.1rem;
         border: var(--border-thick);
         box-shadow: 6px 6px 0px var(--c-black);
-        border-radius: 0;
     }
     .whatsapp-float:hover { 
         transform: translate(-4px, -4px); 
